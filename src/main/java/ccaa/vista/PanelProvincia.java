@@ -11,7 +11,9 @@ import java.awt.Insets;
 import javax.swing.JTextField;
 
 import ccaa.controladores.ControladorComunidad;
+import ccaa.controladores.ControladorProvincia;
 import ccaa.entidades.CCAA;
+import ccaa.entidades.Provincia;
 import ccaa.recursos.Utils;
 
 import javax.swing.JComboBox;

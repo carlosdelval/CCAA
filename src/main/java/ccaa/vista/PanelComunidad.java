@@ -5,9 +5,14 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 
+import ccaa.controladores.ControladorComunidad;
 import ccaa.entidades.CCAA;
+import ccaa.recursos.Utils;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -90,6 +95,11 @@ public class PanelComunidad extends JPanel {
 		jtfLabel.setColumns(10);
 		
 		JButton btnGuardar = new JButton("Guardar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		GridBagConstraints gbc_btnGuardar = new GridBagConstraints();
 		gbc_btnGuardar.gridx = 2;
 		gbc_btnGuardar.gridy = 8;
@@ -98,10 +108,29 @@ public class PanelComunidad extends JPanel {
 		
 	}
 	
-	private void muestraDatos(CCAA c) {
+	/**
+	 * 
+	 * @param c
+	 */
+	
+	public void muestraDatos(CCAA c) {
 		this.jtfCode.setText(c.getCode());
 		this.jtfParentCode.setText(c.getParent_code());
 		this.jtfLabel.setText(c.getLabel());
 	}
-
+	
+	/**
+	 * 
+	 */
+	
+	private void update() {
+		ControladorComunidad cc = new ControladorComunidad();
+		CCAA c = new CCAA();
+		
+		c.setCode(this.jtfCode.getSelectedText());
+		c.setParent_code(this.jtfParentCode.getSelectedText());
+		c.setLabel(this.jtfLabel.getSelectedText());
+		
+		cc.updateDocument(c);
+	}
 }

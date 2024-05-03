@@ -89,7 +89,7 @@ public class Principal extends JFrame {
 		btnNewButton = new JButton("Guardar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				save();
+				update();
 			}
 		});
 		panelDatos.add(btnNewButton, BorderLayout.SOUTH);
@@ -111,13 +111,17 @@ public class Principal extends JFrame {
 	 * Método que guarda los cambios y los aplica a la tabla
 	 */
 
-	private void save() {
+	private void update() {
 		Provincia p = new Provincia();
 		ControladorProvincia cp = new ControladorProvincia();
+		
 		p.setCode(this.panelDatos.getCode());
 		p.setParent_code(this.panelDatos.getParentCode());
 		p.setLabel(this.panelDatos.getLabel());
+		
 		cp.updateDocument(p);
+		
+		actualizaTabla();
 	}
 	
 	/**

@@ -6,12 +6,13 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 import ccaa.entidades.CCAA;
+import ccaa.vista.PanelComunidad;
 
 public class Utils {
 	/**
 	 * 
 	 */
-	public static void abrirNuevoDialogo(JPanel panel, CCAA c) {
+	public static void abrirNuevoDialogo(PanelComunidad panel, CCAA c) {
 		JDialog dialogo = new JDialog();
 		// El usuario no puede redimensionar el di�logo
 		dialogo.setResizable(true);
@@ -28,5 +29,7 @@ public class Utils {
 				(Toolkit.getDefaultToolkit().getScreenSize().height)/2 - dialogo.getHeight()/2);
 		// Muestro el di�logo en pantalla
 		dialogo.setVisible(true);
+		//Muestro los datos de la CCAA en el panel
+		panel.muestraDatos(c);
 	}
 }
