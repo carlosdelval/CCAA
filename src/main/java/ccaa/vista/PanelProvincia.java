@@ -135,8 +135,8 @@ public class PanelProvincia extends JPanel {
 		btnDatosCcaa = new JButton("Datos CCAA");
 		btnDatosCcaa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				PanelComunidad panelComunidad = new PanelComunidad();
-				Utils.abrirNuevoDialogo(panelComunidad, (CCAA)jcbCCAA.getSelectedItem());
+				PanelComunidad panelComunidad = new PanelComunidad((CCAA)jcbCCAA.getSelectedItem());
+				Utils.abrirNuevoDialogo(panelComunidad);
 			}
 		});
 		GridBagConstraints gbc_btnDatosCcaa = new GridBagConstraints();

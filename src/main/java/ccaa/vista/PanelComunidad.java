@@ -27,7 +27,8 @@ public class PanelComunidad extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelComunidad() {
+	public PanelComunidad(CCAA c) {
+		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -97,15 +98,15 @@ public class PanelComunidad extends JPanel {
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				update();
 			}
 		});
 		GridBagConstraints gbc_btnGuardar = new GridBagConstraints();
 		gbc_btnGuardar.gridx = 2;
 		gbc_btnGuardar.gridy = 8;
 		add(btnGuardar, gbc_btnGuardar);
-
 		
+		muestraDatos(c);
 	}
 	
 	/**
